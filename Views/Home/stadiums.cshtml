@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Stadiums>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            @foreach(var items in Model)
+            {
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col col-sm-2 col-6  d-flex justify-content-start">
+                                <img src=@items.Image class="rounded" width="200" height="200" />
+                            </div>
+                            <div class="col-sm-6 text-start">
+                              <h5 class="">@items.Name</h5>
+                                <ul class="list list-inline ">
+                                    @foreach(var i in items.Facilities)
+                                    {
+
+                                        <li class="list-inline-item "><small>@i</small>  </li>
+                                    }
+                                   
+                                </ul>
+                                   
+
+                            </div>
+                            <div class="col"></div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
